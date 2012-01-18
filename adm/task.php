@@ -3,11 +3,6 @@ defined('BW') or die("Acesso negado!");
 
 // DEPOIMENTOS
 /////////////////////////////////////////////////////////////
-if ($task == 'listarDepoimentos')
-{
-    $r = Depoimento::listar(bwRequest::getVar('dados', array()));    
-}
-
 if ($task == 'salvarDepoimento')
 {
     $r = Depoimento::salvar(bwRequest::getVar('dados', array()));       
