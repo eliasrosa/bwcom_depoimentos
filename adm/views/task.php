@@ -1,17 +1,18 @@
 <?
 defined('BW') or die("Acesso negado!");
+$task = bwRequest::getVar('task');
 
 // DEPOIMENTOS
 /////////////////////////////////////////////////////////////
-if ($task == 'salvarDepoimento')
+if ($task == 'salvar')
 {
     $r = Depoimento::salvar(bwRequest::getVar('dados', array()));       
 }
 
-if ($task == 'removerDepoimento')
+if ($task == 'remover')
 {
     $r = Depoimento::remover(bwRequest::getVar('dados', array()));
-    $r['redirect'] = bwRouter::_("adm.php?com=depoimentos&view=lista");
+    $r['redirect'] = bwRouter::_('/depoimentos/lista');
 }
 
 die(json_encode($r));

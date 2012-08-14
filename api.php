@@ -7,7 +7,6 @@ class bwDepoimentos extends bwComponent
     // variaveis obrigatórias
     var $id = 'depoimentos';
     var $nome = 'Depoimentos';
-    var $adm_url_default = 'adm.php?com=depoimentos&view=lista';
     var $adm_visivel = true;
     
     
