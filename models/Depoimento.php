@@ -3,14 +3,15 @@
 class Depoimento extends bwRecord
 {
     var $labels = array(
-        'id' => 'ID',
         'datahora' => 'Data/Hora',
         'nome' => 'Nome',
         'cargo' => 'Cargo',
         'empresa' => 'Empresa',
         'resumo' => 'Depoimento resumido',
         'depoimento' => 'Depoimento',
-        'status' => 'Status'
+        'url_video' => 'URL do vídeo',
+        'cidade' => 'Cidade',
+        'uf' => 'UF',
     );
 
     public function setTableDefinition()
@@ -61,6 +62,33 @@ class Depoimento extends bwRecord
             'notnull' => false,
             'autoincrement' => false,
         ));
+        $this->hasColumn('url_video', 'string', 255, array(
+            'type' => 'string',
+            'length' => 255,
+            'fixed' => false,
+            'unsigned' => false,
+            'primary' => false,
+            'notnull' => false,
+            'autoincrement' => false,
+        ));
+        $this->hasColumn('cidade', 'string', 255, array(
+            'type' => 'string',
+            'length' => 255,
+            'fixed' => false,
+            'unsigned' => false,
+            'primary' => false,
+            'notnull' => false,
+            'autoincrement' => false,
+        ));
+        $this->hasColumn('uf', 'string', 100, array(
+            'type' => 'string',
+            'length' => 100,
+            'fixed' => false,
+            'unsigned' => false,
+            'primary' => false,
+            'notnull' => false,
+            'autoincrement' => false,
+        ));
         $this->hasColumn('resumo', 'string', null, array(
             'type' => 'string',
             'fixed' => false,
@@ -100,7 +128,7 @@ class Depoimento extends bwRecord
     {
         parent::setUp();
 
-        $this->setBwImagem('depoimentos', 'imagens');
+        $this->addImagem();
     }
 
     public function preHydrate(Doctrine_Event $event)

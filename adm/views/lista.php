@@ -11,7 +11,7 @@ function grid_col0($i)
 
 function grid_col1($i)
 {
-    $src = $i->bwImagem->getUrlResize('width=100&height=100');
+    $src = $i->bwImagem->default->resize(100, 100);
     return sprintf('<img src="%s" />', $src);
 }
 
