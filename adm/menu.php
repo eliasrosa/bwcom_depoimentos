@@ -5,7 +5,7 @@ $tituloPage = "Administração de Depoimentos";
 
 $menu = array(
     '0' => array(
-        'url' => 'adm.php?com=depoimentos&view=lista',
+        'url' => '/depoimentos/lista',
         'tit' => 'Listar'
     )
 );
